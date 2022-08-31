@@ -315,7 +315,8 @@ body.unlock {
 		@media (max-width:426px) {
 			position: absolute;
 			right: 40px;
-			top: calc(100vh - 40px);
+			// top: calc(100vh - 40px);
+			top: calc((var(--vh, 1vh) * 100) - 40px);
 		}
 
 	}
