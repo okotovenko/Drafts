@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+"title": "Drafts"
+})
+
+<body>
+	<div class="wrapper">
+		<section class="short">
+			<div class="short__content">
+				<div class="short__img slider">
+					<div class="short__img-item">
+						<img src="@img/slider/01.png" alt="img">
+					</div>
+					<div class="short__img-item">
+						<img src="@img/slider/02.png" alt="img">
+					</div>
+					<div class="short__img-item">
+						<img src="@img/slider/03.png" alt="img">
+					</div>
+				</div>
+				<div class="short__top">
+					<div class="short__nav nav">
+						<div class="nav__logo">
+							<img src="@img/logo.svg" alt="logo">
+							<p>WARPLAY.CLOUD</p>
+						</div>
+						<div class="nav__burger">
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<div class="short__center">
+					<div class="short__subtitle">Сервис облачного гейминга</div>
+					<div class="short__title">Преврати свое устройство в игровое </div>
+					<a class="short__link">UPGRADE</a>
+				</div>
+			</div>
+		</section>
+		@@include('html/header.html', {})
+		<section class="top">
+			<svg height="10" width="100%" class="svg-top">
+				<g fill="none" stroke="#ABABAB" stroke-width="5">
+					<path stroke-dasharray="15,20" d="M0 0 l100000 0" />
+				</g>
+			</svg>
+			<div class="top__img">
+				<img src="@img/top.png" alt="img">
+			</div>
+			<div class="top__center">
+				<div class="top__subtitle short__subtitle">Сервис облачного гейминга</div>
+				<div class="top__title short__title">Преврати свое устройство в игровое </div>
+				<a class="top__link short__link">UPGRADE</a>
+			</div>
+			<svg height="10" width="100%" class="svg-bottom">
+				<g fill="none" stroke="#ABABAB" stroke-width="5">
+					<path stroke-dasharray="15,20" d="M0 0 l100000 0" />
+				</g>
+			</svg>
+		</section>
+		<section>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, commodi.</p>
+		</section>
+		@@include('html/footer.html', {})
+	</div>
+	<!-- Кнопка "вгору" -->
+	<!-- <a class="_icon-up" title="Up"></a> -->
+	<!-- Підключення jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="js/app.min.js"></script>
+
+</body>
+
+</html>

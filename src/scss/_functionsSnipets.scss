@@ -1,0 +1,60 @@
+//! Пропорціональне збільшення елементів (яким вказані параметри за допомогою даного міксина)
+//! відносно розмірів макетного полотна та обмежуючого контейнера.
+// Вказуємо параметри "полотна по макету (1920рх)"
+// Вказуємо параметри "обмежуючого контейнера по макету (1170рх)"
+// Приклад; "@include adaptive-value("padding", 50, 20, 0)"
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+	$addSize: $startSize - $minSize;
+
+	@if $type==1 {
+		// Якщо потрібно, щоб елементи зменшувалися пропорційно зі зменшенням
+		// обмежуючого контейнера
+		#{$property}: $startSize + px;
+
+		@media (max-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+		}
+	}
+
+	@else if $type==2 {
+		// Якщо потрібно, щоб елементи збільшувалися тоді, коли досягнуто
+		// граничного значення обмежуючого контейнера
+		#{$property}: $startSize + px;
+
+		@media (min-width: #{$maxWidthContainer + px}) {
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+		}
+	}
+
+	@else {
+		// Якщо потрібно, щоб елементи збільшувалися і зменшувалися постійно при зміні розміру
+		// обмежуючого контейнера
+		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+	}
+}
+
+
+//! Ці функції дають можливість перетворювати "%", "REM" і "EM" відразу в "рх",
+//! де "14" - розмір шрифта браузера (чи проекта) за замовчуванням.
+// Приклад використання "font-size: rem(56)"
+
+// Конвертація в "%"
+@function prc($pxOne, $pxTwo) {
+	$result: ($pxOne / $pxTwo)*100%;
+	@return $result;
+}
+
+// Конвертація в "REM"
+@function rem($px) {
+	$result: ($px / 14)+rem;
+	@return $result;
+}
+
+// Конвертація в "EM"
+@function em($px) {
+	$result: ($px / 14)+em;
+	@return $result;
+}
