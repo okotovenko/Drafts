@@ -3,8 +3,8 @@
 // Вказуємо параметри "полотна по макету (1920рх)"
 // Вказуємо параметри "обмежуючого контейнера по макету (1170рх)"
 // Приклад; "@include adaptive-value("padding", 50, 20, 0)"
-$maxWidth: 1920;
-$maxWidthContainer: 1170;
+$maxWidth: 1440;
+$maxWidthContainer: 1180;
 
 @mixin adaptive-value($property, $startSize, $minSize, $type) {
 	$addSize: $startSize - $minSize;

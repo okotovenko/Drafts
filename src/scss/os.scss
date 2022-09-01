@@ -1,0 +1,52 @@
+.os {
+
+	&__wrapper {
+		padding: rem(15);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: rem(115);
+	}
+}
+
+.wrapper-os {
+
+	&__arrow {
+		position: absolute;
+		left: -70px;
+		top: 12px;
+
+		& a {
+			position: relative;
+
+			&:hover::after {
+				content: attr(data-title);
+				font-family: Roboto;
+				position: absolute;
+				width: 140px;
+				left: 0;
+				top: -40px;
+				font-size: rem(12);
+				letter-spacing: 1px;
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	&__title {
+		position: relative;
+		font-family: 'Aire';
+		font-size: rem(48);
+		line-height: rem(48);
+		color: #FFFFFF;
+
+		@include adaptive-value("font-size", 48, 40, 2);
+	}
+
+	&__icons {
+		display: flex;
+		gap: rem(60);
+	}
+}

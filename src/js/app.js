@@ -33,6 +33,12 @@ slick();
 import * as slickSettings from "./modules/slickSettings.js";
 slickSettings();
 
+// Налаштування для браузерів мобільних пристроїв (наприклад, 
+//Chrome на висоті 100vh вираховує свої меню. Даний скріпт 
+//вираховує висоту, враховуючи це)
+import * as foolScrennBlockForMobile from "./modules/foolScrennBlockForMobile.js";
+foolScrennBlockForMobile();
+
 
 
 
