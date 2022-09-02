@@ -1,3 +1,4 @@
+//-----------------
 const screenWidth = window.screen.width;
 
 let headerIconsBottom = document.querySelector('.header__icons-bottom > a');
@@ -8,12 +9,13 @@ headerIconsBottom.addEventListener('click', function () {
 	}
 });
 
+//-----------------
 let home = document.querySelector('#home');
 home.addEventListener('click', function () {
 	short.classList.remove('active');
 })
 
-
+//-----------------
 let short = document.querySelector('.short');
 let navBurger = document.querySelector('.nav__burger');
 let headerContainer = document.querySelector('.header__container');
@@ -30,6 +32,16 @@ navBurger.addEventListener('click', function () {
 		headerContainer.classList.toggle('active');
 	}
 })
+
+//---------------Підйом догори------------
+navBurger.addEventListener('click', backToTop);
+
+export function backToTop() {
+	if (window.pageYOffset > 0) {
+		window.scrollBy(0, -20);
+		setTimeout(backToTop, 0);
+	}
+}
 
 
 
