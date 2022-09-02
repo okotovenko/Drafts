@@ -1,0 +1,203 @@
+$clipPath: polygon(90% 0, 100% 30%, 100% 100%, 0 100%, 0 0);
+
+
+.enter {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	&__wrapper {
+		width: 34%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: rem(30);
+		padding: rem(10);
+
+		@media (max-width:426px) {
+			width: 100%;
+		}
+	}
+}
+
+.wrapper-enter {
+
+	&__title {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		width: 80%;
+		margin: 0 auto;
+
+		@media (max-width:426px) {
+			flex-direction: column;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		left: -50px;
+		top: 12px;
+
+		@media (max-width:426px) {
+			left: 0px;
+			top: -40px;
+		}
+
+		& a {
+			position: relative;
+
+			&:hover::after {
+				content: attr(data-title);
+				font-family: Roboto;
+				position: absolute;
+				width: 140px;
+				left: 0;
+				top: -40px;
+				font-size: rem(12);
+				letter-spacing: 1px;
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	&__registration,
+	&__enter {
+		font-family: 'Aire';
+		font-size: rem(48);
+		line-height: rem(48);
+		color: rgba(255, 255, 255, 0.5);
+
+		@include adaptive-value("font-size", 48, 40, 2);
+
+		&:hover {
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		margin: 0 auto;
+
+		& a {
+			padding: rem(20) rem(40);
+			margin: rem(15) auto rem(50);
+			background-color: #FFFFFF;
+			color: #000;
+			font-family: 'Aire';
+			font-size: 24px;
+			line-height: 24px;
+			clip-path: $clipPath;
+
+			@include adaptive-value("font-size", 24, 16, 2);
+		}
+	}
+
+	&__form>input {
+		background-color: #FFFFFF;
+		border-radius: 5px;
+		padding: rem(25);
+		color: rgba(0, 0, 0, 0.5);
+		font-family: 'Aire';
+		font-size: rem(24);
+		line-height: rem(24);
+		margin-bottom: rem(15);
+
+		@include adaptive-value("font-size", 24, 16, 2);
+	}
+
+	&__form-check {
+		display: flex;
+		gap: rem(20);
+		position: relative;
+
+		& input {
+			align-self: flex-start;
+			transform: scale(1.85);
+			margin: rem(5) rem(0) rem(0) rem(5);
+		}
+
+		& p {
+			align-self: flex-start;
+			font-family: 'Roboto';
+			font-weight: 200;
+			font-size: rem(12);
+			line-height: rem(14);
+			color: #FFFFFF;
+
+			@include adaptive-value("font-size", 12, 4, 2);
+			@include adaptive-value("line-height", 14, 2, 2);
+		}
+	}
+
+	&__social {
+		width: 90%;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: rem(20);
+	}
+
+	&__social-title {
+		font-family: 'Roboto';
+		font-weight: 200;
+		font-size: rem(12);
+		line-height: rem(14);
+		color: #FFFFFF;
+		position: relative;
+
+		@include adaptive-value("font-size", 12, 4, 2);
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -130px;
+			top: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			background-color: rgba(255, 255, 255, 0.5);
+			width: 117px;
+			height: 0;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: -130px;
+			top: 50%;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			background-color: rgba(255, 255, 255, 0.5);
+			width: 117px;
+			height: 0;
+		}
+	}
+
+	&__social-logo {
+		display: flex;
+		flex-direction: column;
+		gap: rem(13);
+		align-items: center;
+
+		& img {
+			width: 25px;
+			height: 25px;
+
+			@include adaptive-value("width", 25, 5, 2);
+			@include adaptive-value("height", 25, 5, 2);
+		}
+	}
+
+	&__social-logo-top {
+		display: flex;
+		gap: rem(20);
+	}
+
+	&__social-logo-bottom {
+		display: flex;
+		gap: rem(20);
+	}
+
+}

@@ -3,6 +3,9 @@
 @import "_functionsSnipets.scss";
 
 @import "os";
+@import "contacts";
+@import "enter";
+
 
 // Оголошуємо змінні
 $font-size: 16px;
@@ -64,7 +67,7 @@ body.unlock {
 
 .short {
 	width: 100vw;
-	height: 100vh;
+	// height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
 	box-sizing: border-box;
 	background: linear-gradient(360deg, #141C24 0%, rgba(20, 28, 36, 0) 95.65%), #527E8B;
@@ -133,8 +136,9 @@ body.unlock {
 		justify-content: center;
 		color: #FFFFFF;
 		position: absolute;
+		// top: 0;
 		left: 0;
-		top: 0;
+		bottom: 0;
 		z-index: 2;
 		// position: relative;
 
@@ -368,9 +372,10 @@ body.unlock {
 		transition: 0.2s ease;
 		// border: 1px solid #fff;
 
-		@media (max-width:768px) {
-			gap: rem(20);
+		@media (max-width:1000px) {
+			gap: rem(15);
 			flex-direction: column;
+			padding: rem(20) rem(15);
 		}
 
 		@media (max-width:426px) {
@@ -409,7 +414,7 @@ body.unlock {
 		padding: rem(5);
 		// border: 1px solid #fff;
 
-		@media (max-width:768px) {
+		@media (max-width:1000px) {
 			align-self: flex-start;
 			width: 100%;
 		}
@@ -421,8 +426,8 @@ body.unlock {
 
 			@media (max-width:426px) {
 				flex-direction: column;
-				gap: rem(30);
-				margin-top: rem(50);
+				gap: rem(20);
+				margin-top: rem(20);
 				text-align: center;
 			}
 
@@ -457,18 +462,18 @@ body.unlock {
 
 		@media (max-width:426px) {
 			width: 100%;
-			margin-top: rem(40);
-			display: block;
+			// margin-top: rem(40);
+			// display: block;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: rem(40);
+			gap: rem(20);
 		}
 	}
 
 	&__icons-top {
 		justify-content: center;
-		padding-bottom: rem(40);
+		padding-bottom: rem(20);
 		width: 100%;
 		display: flex;
 		gap: rem(20);
